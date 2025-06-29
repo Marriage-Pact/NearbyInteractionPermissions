@@ -19,7 +19,7 @@ public class NIPermissionChecker: NSObject {
         case denied
         case notSupported
         
-        var displayString: String {
+        public var displayString: String {
             switch self {
             case .unknown:
                 "Unknown"
