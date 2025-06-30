@@ -25,7 +25,7 @@ The previous approach is cumbersome and requires having multiple devices availab
 
 This package uses an innovative approach to solve the permission detection problem:
 
-### The Insight
+### 💡 The Insight
 1. **Self-Token**: Create a "decoy" Nearby Interaction session using the current device's own discovery token
 2. **Intentional Invalidation**: Invalidate that session immediately to trigger error callbacks
 3. **Error Analysis**: Analyze the resulting error to determine permission status:
@@ -78,6 +78,8 @@ The view displays:
 - Current permission status
 - A button to request permissions
 - Automatic status updates when the app becomes active
+
+<img src="[https://your-image-url.type](https://github.com/user-attachments/assets/4feaf2ee-06a4-43c3-9bdd-4dd9bd3b9bef)" width="250" height="542">
 
 ### Custom Implementation
 
