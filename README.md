@@ -7,10 +7,10 @@ A Swift package that provides a simple way to check and request Nearby Interacti
 Apple's Nearby Interaction framework lacks a direct API to check permission status, unlike other system permissions (camera, notifications, location, etc.). This creates several challenges for developers:
 
 ### The Challenges
-- **No Silent Permission Check**: There's no way to silently determine if a user has granted or denied Nearby Interaction permission in the background
-- **Token Dependency**: The only way to check permissions is to attempt to connect to another device, but this requires a valid device token from another device
-- **Intrusive Permission Prompts**: Starting an NI session triggers the permission prompt at potentially inappropriate times, disrupting user experience
-- **Complex Permission Flow**: Developers must manage the entire nearby interaction session lifecycle just to determine permission status
+- 🔇 **No Silent Permission Check**: There's no way to silently determine if a user has granted or denied Nearby Interaction permission in the background
+- 🎫 **Token Dependency**: The only way to check permissions is to attempt to connect to another device, but this requires a valid device token from another device
+- 🚨 **Intrusive Permission Prompts**: Starting an NI session triggers the permission prompt at potentially inappropriate times, disrupting user experience
+- 🔄 **Complex Permission Flow**: Developers must manage the entire nearby interaction session lifecycle just to determine permission status
 
 ### Without This Package
 Without this package, checking NI permissions required:
@@ -26,11 +26,11 @@ The previous approach is cumbersome and requires having multiple devices availab
 This package uses an innovative approach to solve the permission detection problem:
 
 ### 💡 The Insight
-1. **Self-Token**: Create a "decoy" Nearby Interaction session using the current device's own discovery token
-2. **Intentional Invalidation**: Invalidate that session immediately to trigger error callbacks
-3. **Error Analysis**: Analyze the resulting error to determine permission status:
-   - `userDidNotAllow` error = Permission denied
-   - `invalidConfiguration` error = Permission granted (session failed due to self-token configuration, not permission)
+1. 🎭 **Self-Token**: Create a "decoy" Nearby Interaction session using the current device's own discovery token
+2. ⚡ **Intentional Invalidation**: Invalidate that session immediately to trigger error callbacks
+3. 🔍 **Error Analysis**: Analyze the resulting error to determine permission status:
+   - ❌ `userDidNotAllow` error = Permission denied
+   - ✅ `invalidConfiguration` error = Permission granted (session failed due to self-token configuration, not permission)
 
 ### Technical Implementation
 The package creates a temporary `NISession`, starts it with the device's own token (which will always fail), and uses the failure reason to determine the actual permission state. This workaround provides instant permission status without requiring tokens from other NI devices.
@@ -79,7 +79,7 @@ The view displays:
 - A button to request permissions
 - Automatic status updates when the app becomes active
 
-<img src="[https://your-image-url.type](https://github.com/user-attachments/assets/4feaf2ee-06a4-43c3-9bdd-4dd9bd3b9bef)" width="250" height="542">
+<img src="https://github.com/user-attachments/assets/ea569b3b-e3d5-437c-b0ef-6ed310ce3617" alt="NearbyInteractionPermissions Demo" height="400">
 
 ### Custom Implementation
 
