@@ -38,18 +38,12 @@ The package creates a temporary `NISession`, starts it with the device's own tok
 ## Installation
 
 ### Swift Package Manager
-Add this package to your project by adding the following dependency to your `Package.swift` file:
 
-```swift
-dependencies: [
-    .package(url: "https://github.com/Marriage-Pact/NearbyInteractionPermissions.git", from: "1.0.0")
-]
-```
+Add FullSpeedVStack to your project through Xcode:
 
-Or add it through Xcode:
 1. File → Add Package Dependencies
-2. Enter the repository URL
-3. Select the version and add to your target
+2. Enter the repository URL: `https://github.com/Marriage-Pact/NearbyInteractionPermissions`
+3. Select your desired version
 
 ## Configuration
 
