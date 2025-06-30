@@ -1,5 +1,6 @@
 //
 //  NITokenCoder.swift
+//  NearbyInteractionPermissions
 //
 //  Created by Ian Thomas on 10/17/24.
 //
@@ -21,7 +22,7 @@ struct NITokenCoder {
             let data = try NSKeyedArchiver.archivedData(withRootObject: token, requiringSecureCoding: true)
             return data
         } catch {
-            let errorText = "Error converting token to data: \(error.localizedDescription)"
+            print("Error converting token to data: \(error.localizedDescription)")
             return nil
         }
     }

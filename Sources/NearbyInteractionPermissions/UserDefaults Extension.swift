@@ -1,5 +1,6 @@
 //
 //  UserDefaults Extension.swift
+//  NearbyInteractionPermissions
 //
 //  Created by Ian Thomas on 6/27/25.
 //
@@ -24,9 +25,5 @@ extension UserDefaults {
     
     func markUserAsPromptedForNI() {
         hasBeenPromptedForNI = true
-    }
-    
-    var shouldTestNIPermissionOnStartup: Bool {
-        return hasBeenPromptedForNI
     }
 }
